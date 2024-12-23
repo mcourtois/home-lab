@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: mcourtois
+  description: An ansible role to configure a Raspberry Pi
+  license: MIT
+  min_ansible_version: 2.10
+  platforms:
+    - name: Raspbian
+      versions:
+        - all
+  galaxy_tags:
+    - raspberry
+    - pi
+    - raspbian
+    - system
+  dependencies: []

@@ -1,0 +1,9 @@
+---
+- name: Install and update packages
+  import_tasks: packages.yml
+
+- name: Boot - config.txt
+  import_tasks: config/boot_config.yml
+
+- name: Boot - cmdline.txt
+  import_tasks: config/boot_cmdline.yml

@@ -1,0 +1,50 @@
+net-rack:
+  hosts:
+    hestia:
+      ansible_become: true
+    phoenix:
+      ansible_become: true
+
+small-rack:
+  hosts:
+    rp3bp-01:
+      ansible_become: true
+    rp3bp-02:
+      ansible_become: true
+    rpcm4-1:
+      ansible_become: true
+    rpcm4-2:
+      ansible_become: true
+    rpcm4-3:
+      ansible_become: true
+    rpcm4-4:
+      ansible_become: true
+    rpcm4-5:
+      ansible_become: true
+    rpcm4-6:
+      ansible_become: true
+    rp5-1:
+      ansible_become: true
+    njn-1:
+      ansible_become: true
+      python_interpreter: /usr/bin/python3
+
+rp3bp:
+  hosts:
+    rp3bp-01:
+      ansible_become: true
+    rp3bp-02:
+      ansible_become: true
+
+rpcm4:
+  hosts:
+    rpcm4-1:
+    rpcm4-2:
+    rpcm4-3:
+    rpcm4-4:
+    rpcm4-5:
+    rpcm4-6:
+
+njn2g:
+  hosts:
+    njn-1:

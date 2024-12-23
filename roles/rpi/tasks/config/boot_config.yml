@@ -1,0 +1,37 @@
+---
+- name: "{{ 'Enable' if rpi_i2c else 'Disable' }} I2C"
+  lineinfile:
+    path: "{{ rpi_boot_config_file_path }}"
+    regexp: '#?dtparam=i2c_arm=on'
+    line: "{{ '' if rpi_i2c else '#' }}dtparam=i2c_arm=on"
+    state: present
+  notify: reboot
+
+- name: "{{ 'Install' if rpi_i2c else 'Uninstall' }} I2C tools"
+  apt:
+    name: "{{ rpi_i2c_packages }}"
+    state: "{{ 'present' if rpi_i2c else 'absent' }}"
+
+- name: "{{ 'Enable' if rpi_spi else 'Disable' }} SPI"
+  lineinfile:
+    path: "{{ rpi_boot_config_file_path }}"
+    regexp: '#?dtparam=spi=on'
+    line: "{{ '' if rpi_spi else '#' }}dtparam=spi=on"
+    state: present
+  notify: reboot
+
+- name: "{{ 'Enable' if rpi_pciex else 'Disable' }} PCI Express"
+  lineinfile:
+    path: "{{ rpi_boot_config_file_path }}"
+    regexp: '^#?dtparam=pciex1$'
+    line: "{{ '' if rpi_pciex else '#' }}dtparam=pciex1"
+    state: present
+  notify: reboot
+
+- name: "{{ 'Enable' if rpi_pciex else 'Disable' }} PCI Express Gen3"
+  lineinfile:
+    path: "{{ rpi_boot_config_file_path }}"
+    regexp: '^#?dtparam=pciex1_gen=3$'
+    line: "{{ '' if rpi_pciex else '#' }}dtparam=pciex1_gen=3"
+    state: present
+  notify: reboot

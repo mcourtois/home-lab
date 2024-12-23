@@ -1,0 +1,6 @@
+---
+- name: Shutdown the lab
+  hosts: all
+  tasks:
+    - name: Shutdown all hosts
+      community.general.shutdown:

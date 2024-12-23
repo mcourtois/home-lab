@@ -1,0 +1,8 @@
+---
+- name: Configure Raspberry PIs
+  hosts: rpi
+  roles:
+    - role: rpi
+
+
+# install screen

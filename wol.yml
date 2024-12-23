@@ -1,0 +1,10 @@
+---
+- name: Wakeup the lab
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Send a magic packet to all hosts
+      community.general.wakeonlan:
+        mac: "{{ ansible_facts.default_ipv4.macaddress }}"
+      delegate_to: localhost
+      delegate_facts: true

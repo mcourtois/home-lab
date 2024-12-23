@@ -1,0 +1,16 @@
+---
+# defaults variables for rpi
+
+# Interfaces
+rpi_i2c: false
+rpi_spi: false
+rpi_pciex: false
+
+# Variable used in packages.yml
+rpi_extra_packages: []
+rpi_create_python_virtualenv: false
+rpi_python_virtualenv: /opt/venv
+rpi_python_packages: []
+
+# Variable used in config/boot_cmdline.yml
+rpi_boot_cmdline: []
